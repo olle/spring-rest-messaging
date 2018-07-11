@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestMessagingController {
 
 	private static final RestMessages FIXTURE = new RestMessages(
-			Arrays.asList(new RestMessage(42L, 0L, "resource", "http://some-url-you-better-believe-it")));
+			Arrays.asList(new RestMessage(42L, "http://some-url-you-better-believe-it")));
 
 	@GetMapping(path = "/")
 	public RestMessages getRestMessagesJson() {

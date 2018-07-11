@@ -7,32 +7,19 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class RestMessage {
 
 	private final Long id;
-	private final Long segment;
-	private final String rel;
-	private final String link;
+	private final String href;
 
-	public RestMessage(Long id, Long segment, String rel, String link) {
-
+	public RestMessage(Long id, String href) {
 		this.id = id;
-		this.segment = segment;
-		this.rel = rel;
-		this.link = link;
+		this.href = href;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public Long getSegment() {
-		return segment;
-	}
-
-	public String getRel() {
-		return rel;
-	}
-
-	public String getLink() {
-		return link;
+	public String getHref() {
+		return href;
 	}
 
 }
