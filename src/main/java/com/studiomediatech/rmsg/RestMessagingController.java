@@ -1,20 +1,21 @@
 package com.studiomediatech.rmsg;
 
-import java.util.Arrays;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RestMessagingController {
 
-	private static final RestMessages FIXTURE = new RestMessages(
-			Arrays.asList(new RestMessage(42L, "http://some-url-you-better-believe-it")));
+	private final RestMessagingService service;
+
+	public RestMessagingController(RestMessagingService service) {
+		this.service = service;
+	}
 
 	@GetMapping(path = "/")
 	public RestMessages getRestMessagesJson() {
 
-		return FIXTURE;
+		return service.getMessages();
 	}
 
 }

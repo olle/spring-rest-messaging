@@ -8,6 +8,5 @@ public class RestMessagingApplication {
 
 	public static void main(String[] args) throws InterruptedException {
 		SpringApplication.run(RestMessagingApplication.class, args);
-		Thread.currentThread().join();
 	}
 }
